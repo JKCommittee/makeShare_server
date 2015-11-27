@@ -8,13 +8,13 @@ class Post {
 	}
 	
 	/*public function getPostList($eventId) {
-		$query = "SELECT * FROM post WHERE ";
+		$query = "SELECT * FROM post";
 		return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 	}*/
 	
 	public function savePost($data) {
 		$time = time();
-		$now = date('Y-m-d H:i:s', time);
+		$now = date('Y-m-d H:i:s', $time);
 		$fileName = "img/" . $time . "_" . $data['user_id'];
 		
 		move_uploaded_file($data['file']['tmp_name'], $fileName);
