@@ -19,7 +19,6 @@ class Post {
 		
 		move_uploaded_file($data['file']['tmp_name'], $fileName);
 		chmod($fileName, 0755);
-		
 		$file = json_encode(array($fileName));
 		
 		$query = "INSERT INTO post (`content`, `image_url`, `post_time`, `user_id`) VALUES ('{$data['content']}','$file','$now',{$data['user_id']})";
