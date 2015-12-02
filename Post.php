@@ -7,10 +7,10 @@ class Post {
 		$this->pdo = Mysql::connect();
 	}
 	
-	/*public function getPostList($eventId) {
+	public function getPostList() {
 		$query = "SELECT * FROM post";
 		return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
-	}*/
+	}
 	
 	public function savePost($data) {
 		$time = time();
