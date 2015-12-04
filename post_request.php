@@ -6,7 +6,6 @@ $postDao = new Post();
 if ($_POST['func'] === 'post') {
 	$data = $_POST;
 	unset($data['func']);
-	$data['file'] = $_FILES['file'];
-	echo json_encode(array('result' => $postDao->savePost($data)));
+	echo json_encode(array('result' => $postDao->savePost($data, $_FILES)));
 }
 
