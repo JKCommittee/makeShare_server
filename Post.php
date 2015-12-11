@@ -18,7 +18,7 @@ class Post {
 		$fileName = array();
 		$i = 1;
 		foreach ($files as $file) {
-			$fileName = "img/" . $time . "_" . $data['user_id'] . "_" . $i;
+			$fileName[] = "img/" . $time . "_" . $data['user_id'] . "_" . $i;
 			move_uploaded_file($file['tmp_name'], $fileName);
 			chmod($fileName, 0755);
 		}
