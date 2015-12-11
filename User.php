@@ -1,6 +1,6 @@
 <?php
 include_once dirname(__FILE__)."/Mysql.php";
-class Post {
+class User {
 	private $pdo;
 	
 	function __construct() {
