@@ -9,7 +9,7 @@ class User {
 	
 	public function getProfile($id) {
 		$query = "SELECT * FROM user WHERE id = $id";
-		return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+		return $this->pdo->query($query)->fetch(PDO::FETCH_ASSOC);
 	}
 	
 	public function getRelation($id) {
