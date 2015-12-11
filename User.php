@@ -16,8 +16,8 @@ class User {
 		$follow = "SELECT * FROM user_relation INNER JOIN user ON user_relation.relation_id = user.id WHERE user_relation.user_id = $id";
 		$follower = "SELECT * FROM user_relation INNER JOIN user ON user_relation.user_id = user.id WHERE user_relation.relation_id = $id";
 		return array(
-			'follow' => $this->pdo->query($follow)->fetchAll(PDO::FETCH_ASSOC),
-			'follower' => $this->pdo->query($follower)->fetchAll(PDO::FETCH_ASSOC)
+			'follows' => $this->pdo->query($follow)->fetchAll(PDO::FETCH_ASSOC),
+			'followers' => $this->pdo->query($follower)->fetchAll(PDO::FETCH_ASSOC)
 		);
 	}
 }
