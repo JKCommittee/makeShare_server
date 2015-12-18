@@ -9,3 +9,8 @@ if ($_POST['func'] === 'post') {
 	echo json_encode(array('result' => $postDao->savePost($data, $_FILES)));
 }
 
+if ($_POST['func'] === 'like') {
+	$data = $_POST;
+	unset($data['func']);
+	echo json_encode(array('result' => $postDao->savePost($data, $_FILES)));
+}

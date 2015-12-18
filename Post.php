@@ -8,8 +8,13 @@ class Post {
 	}
 	
 	public function getPostList() {
-		$query = "SELECT * FROM post INNER JOIN user ON post.user_id = user.id";
+		$query = "SELECT * FROM post INNER JOIN user ON post.user_id = user.id ORDER BY post_time DESC";
 		return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+	}
+	
+	public function upadateLike($data) {
+		$query = "UPDATE post SET liked = liked + 1 WHERE id = {$data['id']}";
+		return $this->pdo->query($query);
 	}
 	
 	public function savePost($data, $files) {
